@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RVOSim
+  - Goal1ForAgent1
+  - Goal2ForAgent2
+  - Goal3ForAgent3
   layers:
   - Default
   - TransparentFX
