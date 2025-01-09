@@ -84,5 +84,4 @@ public class RVOAgent : MonoBehaviour
         return new RVO.Vector2(param.x, param.z);
     }
 
-
 }
