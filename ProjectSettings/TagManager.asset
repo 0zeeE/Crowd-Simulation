@@ -8,6 +8,11 @@ TagManager:
   - Goal1ForAgent1
   - Goal2ForAgent2
   - Goal3ForAgent3
+  - Goal4ForAgent4
+  - Goal5ForAgent5
+  - Goal6ForAgent6
+  - Goal7ForAgent7
+  - Goal8ForAgent8
   layers:
   - Default
   - TransparentFX
