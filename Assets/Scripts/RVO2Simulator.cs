@@ -8,6 +8,7 @@ public class RVO2Simulator : MonoBehaviour
 
     List<RVO.Vector2> agentPositions;
     List<GameObject> rvoGameObj;
+    
 
     // Use this for initialization
     void Start()
@@ -38,6 +39,7 @@ public class RVO2Simulator : MonoBehaviour
     {
         return Simulator.Instance.getAgentPosition(agentIndex);
     }
+
 
     public int addAgentToSim(Vector3 pos, GameObject ag, List<Vector3> paths)
     {

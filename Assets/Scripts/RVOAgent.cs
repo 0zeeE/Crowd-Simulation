@@ -17,11 +17,63 @@ public class RVOAgent : MonoBehaviour
     int currentNodeInThePath = 0;
     bool isAbleToStart = false;
     public string targetTag;
+    public Transform secondTarget;
+    public Transform previousTarget;
+    public Transform playerTransform;
+    public bool isInterrupted = false;
+    
 
     // Use this for initialization
+    [ContextMenu("Set Target")]
+    public void SetTarget()
+    {
+        if(secondTarget != null)
+        {
+            target = secondTarget;
+            previousTarget = target;
+            currentNodeInThePath = 0;
+            simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+            pathNodes = new List<Vector3>();
+            StartCoroutine(StartPaths());
+            agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+            isAbleToStart = true;
+        }
+        
+    }
+
+    [ContextMenu("Interrupt NPC")]
+    public void InterrputNPC()
+    {
+        isInterrupted = true;
+        target = this.gameObject.transform;
+        currentNodeInThePath = 0;
+        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+        pathNodes = new List<Vector3>();
+        StartCoroutine(StartPaths());
+        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        isAbleToStart = true;
+
+    }
+
+    [ContextMenu("Continue Path")]
+    public void ContinuePath()
+    {
+        isInterrupted = false;
+        target = previousTarget;
+        previousTarget = target;
+        currentNodeInThePath = 0;
+        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+        pathNodes = new List<Vector3>();
+        StartCoroutine(StartPaths());
+        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        isAbleToStart = true;
+
+    }
+
     IEnumerator Start()
     {
         target = GameObject.FindGameObjectWithTag(targetTag).transform;
+        previousTarget = target;
         currentNodeInThePath = 0;
         simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
         pathNodes = new List<Vector3>();
@@ -45,18 +97,26 @@ public class RVOAgent : MonoBehaviour
         else
         {
             pathNodes = p.vectorPath;
+            
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (isAbleToStart && agentIndex != -1)
+        
+        if (isAbleToStart && agentIndex != -1 &&!isInterrupted)
         {
+           
             transform.position = toUnityVector(simulator.getAgentPosition(agentIndex));
+        }
+        if(isInterrupted && playerTransform != null)
+        {
+            this.gameObject.transform.LookAt(playerTransform);
         }
     }
     public RVO.Vector2 calculateNextStation()
     {
+
         Vector3 station;
         if (currentNodeInThePath < pathNodes.Count)
         {
