@@ -121,22 +121,31 @@ public class RVOAgent : MonoBehaviour
         if (currentNodeInThePath < pathNodes.Count)
         {
             station = pathNodes[currentNodeInThePath];
-            float distance = Vector3.Distance(station, transform.position);
+            float distance = Vector3.Distance(new Vector3(station.x, transform.position.y, station.z), transform.position);
             if (distance >= 0 && distance < 1)
             {
-                station = pathNodes[currentNodeInThePath];
                 currentNodeInThePath++;
             }
+            station = pathNodes[Mathf.Min(currentNodeInThePath, pathNodes.Count - 1)];
         }
         else
         {
             station = pathNodes[pathNodes.Count - 1];
         }
+
         return toRVOVector(station);
     }
     Vector3 toUnityVector(RVO.Vector2 param)
     {
-        return new Vector3(param.x(), transform.position.y, param.y());
+        float y = transform.position.y;
+
+        // Eðer pathNodes varsa ve geçerli bir node varsa, yüksekliði oradan al
+        if (pathNodes != null && currentNodeInThePath < pathNodes.Count)
+        {
+            y = pathNodes[currentNodeInThePath].y;
+        }
+
+        return new Vector3(param.x(), y, param.y());
     }
 
     RVO.Vector2 toRVOVector(Vector3 param)
