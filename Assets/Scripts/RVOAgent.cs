@@ -21,9 +21,10 @@ public class RVOAgent : MonoBehaviour
     public Transform previousTarget;
     public Transform playerTransform;
     public bool isInterrupted = false;
-    
+    public List<Transform> targetTransforms;
 
-    // Use this for initialization
+    
+    //Deneme amacli sabit bir noktayi setliyor. Acil durum cikma noktalari icin bu kullanilabilir.
     [ContextMenu("Set Target")]
     public void SetTarget()
     {
@@ -41,6 +42,22 @@ public class RVOAgent : MonoBehaviour
         
     }
 
+    //NPC'nin yeni bir hedefi rastgele secip gitmesini sagliyor
+    [ContextMenu("Use Random Target")]
+    public void RandomTarget()
+    {
+        int targetIndex = UnityEngine.Random.Range(0, targetTransforms.Count - 1);
+        target = targetTransforms[targetIndex];
+        previousTarget = target;
+        currentNodeInThePath = 0;
+        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+        pathNodes = new List<Vector3>();
+        StartCoroutine(StartPaths());
+        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        isAbleToStart = true;
+    }
+    
+    //NPC'nin RVO ve A* hareketlerini durdurur ve oyuncuya bakmasini saglar.
     [ContextMenu("Interrupt NPC")]
     public void InterrputNPC()
     {
@@ -55,6 +72,7 @@ public class RVOAgent : MonoBehaviour
 
     }
 
+    //Durdurulan NPC'nin kaldigi yerden tekrardan yola koyulmasini saglar.
     [ContextMenu("Continue Path")]
     public void ContinuePath()
     {
@@ -72,6 +90,12 @@ public class RVOAgent : MonoBehaviour
 
     IEnumerator Start()
     {
+        GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
+
+        foreach (GameObject target in TargetGObj)
+        {
+            targetTransforms.Add(target.transform);
+        }
         target = GameObject.FindGameObjectWithTag(targetTag).transform;
         previousTarget = target;
         currentNodeInThePath = 0;
