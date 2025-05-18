@@ -15,6 +15,10 @@ TagManager:
   - Goal8ForAgent8
   - Goal9ForAgent9
   - Goal10ForAgent10
+  - Goals
+  - Left Hand
+  - Right Hand
+  - Test
   layers:
   - Default
   - TransparentFX
