@@ -20,10 +20,6 @@ public class AgentSpawner : MonoBehaviour
     {
         int count = 0;
 
-        // Rastgele hedef sýralamasý oluþtur
-        List<Transform> shuffledTargets = new List<Transform>(targetPositions);
-        ShuffleList(shuffledTargets);
-
         while (count < agentCount)
         {
             if (!string.IsNullOrEmpty(groupName))
@@ -41,14 +37,18 @@ public class AgentSpawner : MonoBehaviour
 
             GameObject prefab = agentPrefabs[Random.Range(0, agentPrefabs.Count)];
 
-            // Eðer hedef sayýsý yetmezse baþa sar
-            Transform target = shuffledTargets[count % shuffledTargets.Count];
+            // Rastgele hedef seç
+            Transform target = targetPositions[Random.Range(0, targetPositions.Count)];
 
             GameObject agent = Instantiate(prefab, transform.position, Quaternion.identity);
             agent.name = prefab.name + "_Spawned";
 
             var rvo = agent.GetComponent<RVOAgent>();
-            if (rvo != null) rvo.target = target;
+            if (rvo != null)
+            {
+                rvo.target = target;
+                rvo.previousTarget = target;
+            }
 
             count++;
             yield return new WaitForSeconds(spawnInterval);
@@ -59,6 +59,7 @@ public class AgentSpawner : MonoBehaviour
             spawnLocks[groupName] = false;
         }
     }
+
 
     // Listeyi karýþtýrmak için yardýmcý fonksiyon
     void ShuffleList<T>(List<T> list)
