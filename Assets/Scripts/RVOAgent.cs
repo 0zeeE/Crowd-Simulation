@@ -23,6 +23,8 @@ public class RVOAgent : MonoBehaviour
     public bool isInterrupted = false;
     public List<Transform> targetTransforms;
 
+    [SerializeField] private GameObject AiModule;
+
     
     //Deneme amacli sabit bir noktayi setliyor. Acil durum cikma noktalari icin bu kullanilabilir.
     [ContextMenu("Set Target")]
@@ -68,6 +70,10 @@ public class RVOAgent : MonoBehaviour
         pathNodes = new List<Vector3>();
         StartCoroutine(StartPaths());
         agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        if(AiModule != null)
+        {
+            AiModule.SetActive(true);
+        }
         isAbleToStart = true;
 
     }
@@ -84,6 +90,10 @@ public class RVOAgent : MonoBehaviour
         pathNodes = new List<Vector3>();
         StartCoroutine(StartPaths());
         agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        if (AiModule != null)
+        {
+            AiModule.SetActive(false);
+        }
         isAbleToStart = true;
 
     }
