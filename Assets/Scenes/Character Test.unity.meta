@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Character Test.unity.meta
 guid: f22c348f1582c9e44b75be5f027e3599
+========
+guid: 36ec48372f4d45b4eb5125656da0f498
+>>>>>>>> cansu:Assets/Scenes/cansu.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

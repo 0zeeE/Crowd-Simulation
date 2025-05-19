@@ -8,7 +8,7 @@ public class RVOAgent : MonoBehaviour
 {
 
     [SerializeField]
-    Transform target = null;
+    public Transform target = null;
 
     Seeker agentSeeker;
     private List<Vector3> pathNodes = null;
