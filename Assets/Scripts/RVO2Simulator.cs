@@ -68,6 +68,44 @@ public class RVO2Simulator : MonoBehaviour
         return Simulator.Instance.addAgent(toRVOVector(pos));
     }
 
+    public void RemoveAgent(int agentIndex, GameObject agentObj)
+    {
+        // Listelerden ajaný kaldýr
+        if (agentIndex >= 0 && agentIndex < agentPositions.Count)
+        {
+            agentPositions.RemoveAt(agentIndex);
+            rvoGameObj.Remove(agentObj);
+        }
+        else
+        {
+            Debug.LogWarning($"Agent index {agentIndex} geçersiz veya listede yok!");
+            return;
+        }
+
+        // Simülasyonu sýfýrla
+        Simulator.Instance.Clear();
+
+        // Simülasyon ayarlarýný yeniden yapýlandýr
+        Simulator.Instance.setTimeStep(0.10f);
+        Simulator.Instance.setAgentDefaults(15.0f, 10, 5.0f, 5.0f, 0.5f, 2.0f, new RVO.Vector2(0.0f, 0.0f));
+
+        // Kalan ajanlarý yeniden ekle
+        for (int i = 0; i < agentPositions.Count; i++)
+        {
+            Simulator.Instance.addAgent(agentPositions[i]);
+        }
+
+        // RVOAgent'larýn agentIndex'lerini güncelle
+        for (int i = 0; i < rvoGameObj.Count; i++)
+        {
+            var rvoAgent = rvoGameObj[i].GetComponent<RVOAgent>();
+            if (rvoAgent != null)
+            {
+                rvoAgent.UpdateAgentIndex(i); // Yeni bir metod ekleyeceðiz
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
