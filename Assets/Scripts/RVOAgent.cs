@@ -100,13 +100,22 @@ public class RVOAgent : MonoBehaviour
 
     IEnumerator Start()
     {
-        GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
-
-        foreach (GameObject target in TargetGObj)
+        // Eðer hedef önceden atanmýþsa, tekrar atama
+        if (target == null && !string.IsNullOrEmpty(targetTag))
         {
-            targetTransforms.Add(target.transform);
+            GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
+            foreach (GameObject t in TargetGObj)
+            {
+                targetTransforms.Add(t.transform);
+            }
+
+            GameObject foundTarget = GameObject.FindGameObjectWithTag(targetTag);
+            if (foundTarget != null)
+            {
+                target = foundTarget.transform;
+            }
         }
-        target = GameObject.FindGameObjectWithTag(targetTag).transform;
+
         previousTarget = target;
         currentNodeInThePath = 0;
         simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
@@ -115,6 +124,7 @@ public class RVOAgent : MonoBehaviour
         agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
         isAbleToStart = true;
     }
+
     IEnumerator StartPaths()
     {
         agentSeeker = gameObject.GetComponent<Seeker>();
