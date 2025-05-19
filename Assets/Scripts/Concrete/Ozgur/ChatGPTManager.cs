@@ -82,7 +82,7 @@ public class ChatGPTManager : MonoBehaviour
 
         CreateChatCompletionRequest request = new CreateChatCompletionRequest();
         request.Messages = messages;
-        request.Model = "gpt-3.5-turbo";
+        request.Model = "gpt-4.1-mini";
 
         var response = await openAI.CreateChatCompletion(request);
 
