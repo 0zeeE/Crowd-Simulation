@@ -41,10 +41,10 @@ public class RVOAgent : MonoBehaviour
                 target = secondTarget;
                 previousTarget = target;
                 currentNodeInThePath = 0;
-                simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-                pathNodes = new List<Vector3>();
+                //simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+                //pathNodes = new List<Vector3>();
                 StartCoroutine(StartPaths());
-                agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+                //agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
                 isAbleToStart = true;
             }
         }
@@ -62,10 +62,10 @@ public class RVOAgent : MonoBehaviour
             target = targetTransforms[targetIndex];
             previousTarget = target;
             currentNodeInThePath = 0;
-            simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-            pathNodes = new List<Vector3>();
+            //simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+            //pathNodes = new List<Vector3>();
             StartCoroutine(StartPaths());
-            agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+            //agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
             isAbleToStart = true;
         }
         
@@ -80,10 +80,10 @@ public class RVOAgent : MonoBehaviour
         target = emergencyExitTransforms[targetIndex];
         previousTarget = target;
         currentNodeInThePath = 0;
-        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-        pathNodes = new List<Vector3>();
+        //simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+        //pathNodes = new List<Vector3>();
         StartCoroutine(StartPaths());
-        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        //agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
         isAbleToStart = true;
     }
 
@@ -96,10 +96,10 @@ public class RVOAgent : MonoBehaviour
             isInterrupted = true;
             target = this.gameObject.transform;
             currentNodeInThePath = 0;
-            simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-            pathNodes = new List<Vector3>();
+            //simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+            //pathNodes = new List<Vector3>();
             StartCoroutine(StartPaths());
-            agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+            //agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
             if (AiModule != null)
             {
                 AiModule.SetActive(true);
@@ -118,10 +118,10 @@ public class RVOAgent : MonoBehaviour
         target = previousTarget;
         previousTarget = target;
         currentNodeInThePath = 0;
-        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-        pathNodes = new List<Vector3>();
+        //simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+        //pathNodes = new List<Vector3>();
         StartCoroutine(StartPaths());
-        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+        //agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
         if (AiModule != null)
         {
             AiModule.SetActive(false);
