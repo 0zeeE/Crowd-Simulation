@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &78706966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -321,11 +321,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513861ff73960f458899fe00086bed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefabs: []
-  targetPositions: []
-  spawnInterval: 1
+  agentPrefabs:
+  - {fileID: 3326142401019156455, guid: 19b00059faa9e084bac2c67fd1af6751, type: 3}
+  - {fileID: 5594270069178134739, guid: bd43ab8a4210d4a47851831cfb1d7b4c, type: 3}
+  - {fileID: 2079167889565466091, guid: 9b8e567fc1ecebb4791a2a83d1a9f225, type: 3}
+  - {fileID: 6647073657188985016, guid: fe327d11ba58ce94f88b8bba66b4c889, type: 3}
+  - {fileID: 5375312832453286395, guid: af07d9f9cbed2ed4fb2662812af5f41d, type: 3}
+  - {fileID: 5220351477016754695, guid: bc9886540d25c6143861c42916dc49d4, type: 3}
+  - {fileID: 1745580672129796615, guid: 0232784989e17d245a8cbf41a071ef0b, type: 3}
+  - {fileID: 5920245153295234345, guid: f179c95640e0b1e439dfbe85886fb736, type: 3}
+  - {fileID: 8175176414006306908, guid: d199c4792d7843c4eac30753849233c0, type: 3}
+  - {fileID: 5106794143803113557, guid: ea6e65d7fda617840b21edea1355e748, type: 3}
+  - {fileID: 8143922257400635523, guid: 1556ec8d755c24d4c8253e8775fdf844, type: 3}
+  - {fileID: 8769001456071440954, guid: ae98d3323659d604d9e98a4c7d8bcba7, type: 3}
+  - {fileID: 8616627108775930281, guid: 2cbdf3f8c3c71d5479618a493f08bb0d, type: 3}
+  - {fileID: 7257197262697571766, guid: 9272e8f7852be0243bcc06bcaa49facf, type: 3}
+  - {fileID: 22571560728581710, guid: cd5c3c788bbe8de4ca77ded6ab0cd4ba, type: 3}
+  - {fileID: 5983015119108883138, guid: 4d6ba70b217b55a418cb8fe09693c8b8, type: 3}
+  - {fileID: 1033025724369066426, guid: fd338d12e2be9d94bb25c6a2d72bb1d5, type: 3}
+  - {fileID: 681992181442613780, guid: 0bccb4ba3692f5e438344a0a0e4bff8f, type: 3}
+  - {fileID: 9029575271498602349, guid: 2fdf9db86425f7a4297e3742ea67e973, type: 3}
+  - {fileID: 5256133571392836114, guid: daaccb130501e324b9de620176091ee0, type: 3}
+  - {fileID: 3181958222889015375, guid: f2aa5f06a70d1df498973e289c15648d, type: 3}
+  - {fileID: 484990683456438861, guid: 3e6d5d6a89814c442b4fc9f1ec467dcb, type: 3}
+  - {fileID: 6913870971350823936, guid: 83f9acbc2856709418e253519c41e115, type: 3}
+  - {fileID: 20612349177080118, guid: 154b4e424eb7fdd4586d7f615f16938f, type: 3}
+  - {fileID: 1899558331520191314, guid: 62382f5269f137d4a958d2d7e69ce84c, type: 3}
+  - {fileID: 413784971961637161, guid: 305efc4afe3514644b15dfab3ebc3eba, type: 3}
+  - {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
+  targetPositions:
+  - {fileID: 988818557}
+  - {fileID: 1493575059}
+  - {fileID: 1743561728}
+  - {fileID: 753798979}
+  - {fileID: 349388224}
+  - {fileID: 226454084}
+  - {fileID: 1826277360}
+  - {fileID: 888530950}
+  - {fileID: 304900293}
+  - {fileID: 1923251415}
+  - {fileID: 1224883906}
+  spawnInterval: 3
   agentCount: 5
   groupName: 
+  count: 0
+  canSpawn: 0
 --- !u!65 &78706967
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3856,6 +3896,10 @@ PrefabInstance:
     - target: {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: m_Name
       value: Zkb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3711731017608842297, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: actions.Array.data[0].actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7855,7 +7899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1178701554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7868,11 +7912,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513861ff73960f458899fe00086bed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefabs: []
-  targetPositions: []
+  agentPrefabs:
+  - {fileID: 3326142401019156455, guid: 19b00059faa9e084bac2c67fd1af6751, type: 3}
+  - {fileID: 5594270069178134739, guid: bd43ab8a4210d4a47851831cfb1d7b4c, type: 3}
+  - {fileID: 2079167889565466091, guid: 9b8e567fc1ecebb4791a2a83d1a9f225, type: 3}
+  - {fileID: 6647073657188985016, guid: fe327d11ba58ce94f88b8bba66b4c889, type: 3}
+  - {fileID: 5375312832453286395, guid: af07d9f9cbed2ed4fb2662812af5f41d, type: 3}
+  - {fileID: 5220351477016754695, guid: bc9886540d25c6143861c42916dc49d4, type: 3}
+  - {fileID: 1745580672129796615, guid: 0232784989e17d245a8cbf41a071ef0b, type: 3}
+  - {fileID: 5920245153295234345, guid: f179c95640e0b1e439dfbe85886fb736, type: 3}
+  - {fileID: 8175176414006306908, guid: d199c4792d7843c4eac30753849233c0, type: 3}
+  - {fileID: 5106794143803113557, guid: ea6e65d7fda617840b21edea1355e748, type: 3}
+  - {fileID: 8143922257400635523, guid: 1556ec8d755c24d4c8253e8775fdf844, type: 3}
+  - {fileID: 8769001456071440954, guid: ae98d3323659d604d9e98a4c7d8bcba7, type: 3}
+  - {fileID: 8616627108775930281, guid: 2cbdf3f8c3c71d5479618a493f08bb0d, type: 3}
+  - {fileID: 7257197262697571766, guid: 9272e8f7852be0243bcc06bcaa49facf, type: 3}
+  - {fileID: 22571560728581710, guid: cd5c3c788bbe8de4ca77ded6ab0cd4ba, type: 3}
+  - {fileID: 5983015119108883138, guid: 4d6ba70b217b55a418cb8fe09693c8b8, type: 3}
+  - {fileID: 1033025724369066426, guid: fd338d12e2be9d94bb25c6a2d72bb1d5, type: 3}
+  - {fileID: 681992181442613780, guid: 0bccb4ba3692f5e438344a0a0e4bff8f, type: 3}
+  - {fileID: 9029575271498602349, guid: 2fdf9db86425f7a4297e3742ea67e973, type: 3}
+  - {fileID: 5256133571392836114, guid: daaccb130501e324b9de620176091ee0, type: 3}
+  - {fileID: 3181958222889015375, guid: f2aa5f06a70d1df498973e289c15648d, type: 3}
+  - {fileID: 484990683456438861, guid: 3e6d5d6a89814c442b4fc9f1ec467dcb, type: 3}
+  - {fileID: 6913870971350823936, guid: 83f9acbc2856709418e253519c41e115, type: 3}
+  - {fileID: 20612349177080118, guid: 154b4e424eb7fdd4586d7f615f16938f, type: 3}
+  - {fileID: 1899558331520191314, guid: 62382f5269f137d4a958d2d7e69ce84c, type: 3}
+  - {fileID: 413784971961637161, guid: 305efc4afe3514644b15dfab3ebc3eba, type: 3}
+  - {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
+  targetPositions:
+  - {fileID: 988818557}
+  - {fileID: 1493575059}
+  - {fileID: 1743561728}
+  - {fileID: 753798979}
+  - {fileID: 349388224}
+  - {fileID: 226454084}
+  - {fileID: 1826277360}
+  - {fileID: 888530950}
+  - {fileID: 304900293}
+  - {fileID: 1923251415}
+  - {fileID: 1224883906}
   spawnInterval: 1
   agentCount: 5
   groupName: 
+  count: 0
+  canSpawn: 1
 --- !u!65 &1178701555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12460,7 +12544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1761498253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12473,11 +12557,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6513861ff73960f458899fe00086bed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefabs: []
-  targetPositions: []
+  agentPrefabs:
+  - {fileID: 3326142401019156455, guid: 19b00059faa9e084bac2c67fd1af6751, type: 3}
+  - {fileID: 5594270069178134739, guid: bd43ab8a4210d4a47851831cfb1d7b4c, type: 3}
+  - {fileID: 2079167889565466091, guid: 9b8e567fc1ecebb4791a2a83d1a9f225, type: 3}
+  - {fileID: 6647073657188985016, guid: fe327d11ba58ce94f88b8bba66b4c889, type: 3}
+  - {fileID: 5375312832453286395, guid: af07d9f9cbed2ed4fb2662812af5f41d, type: 3}
+  - {fileID: 5220351477016754695, guid: bc9886540d25c6143861c42916dc49d4, type: 3}
+  - {fileID: 1745580672129796615, guid: 0232784989e17d245a8cbf41a071ef0b, type: 3}
+  - {fileID: 5920245153295234345, guid: f179c95640e0b1e439dfbe85886fb736, type: 3}
+  - {fileID: 8175176414006306908, guid: d199c4792d7843c4eac30753849233c0, type: 3}
+  - {fileID: 5106794143803113557, guid: ea6e65d7fda617840b21edea1355e748, type: 3}
+  - {fileID: 8143922257400635523, guid: 1556ec8d755c24d4c8253e8775fdf844, type: 3}
+  - {fileID: 8769001456071440954, guid: ae98d3323659d604d9e98a4c7d8bcba7, type: 3}
+  - {fileID: 8616627108775930281, guid: 2cbdf3f8c3c71d5479618a493f08bb0d, type: 3}
+  - {fileID: 7257197262697571766, guid: 9272e8f7852be0243bcc06bcaa49facf, type: 3}
+  - {fileID: 22571560728581710, guid: cd5c3c788bbe8de4ca77ded6ab0cd4ba, type: 3}
+  - {fileID: 5983015119108883138, guid: 4d6ba70b217b55a418cb8fe09693c8b8, type: 3}
+  - {fileID: 1033025724369066426, guid: fd338d12e2be9d94bb25c6a2d72bb1d5, type: 3}
+  - {fileID: 681992181442613780, guid: 0bccb4ba3692f5e438344a0a0e4bff8f, type: 3}
+  - {fileID: 9029575271498602349, guid: 2fdf9db86425f7a4297e3742ea67e973, type: 3}
+  - {fileID: 5256133571392836114, guid: daaccb130501e324b9de620176091ee0, type: 3}
+  - {fileID: 3181958222889015375, guid: f2aa5f06a70d1df498973e289c15648d, type: 3}
+  - {fileID: 484990683456438861, guid: 3e6d5d6a89814c442b4fc9f1ec467dcb, type: 3}
+  - {fileID: 6913870971350823936, guid: 83f9acbc2856709418e253519c41e115, type: 3}
+  - {fileID: 20612349177080118, guid: 154b4e424eb7fdd4586d7f615f16938f, type: 3}
+  - {fileID: 1899558331520191314, guid: 62382f5269f137d4a958d2d7e69ce84c, type: 3}
+  - {fileID: 413784971961637161, guid: 305efc4afe3514644b15dfab3ebc3eba, type: 3}
+  - {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
+  targetPositions:
+  - {fileID: 988818557}
+  - {fileID: 1493575059}
+  - {fileID: 1743561728}
+  - {fileID: 753798979}
+  - {fileID: 349388224}
+  - {fileID: 226454084}
+  - {fileID: 1826277360}
+  - {fileID: 888530950}
+  - {fileID: 304900293}
+  - {fileID: 1923251415}
+  - {fileID: 1224883906}
   spawnInterval: 1
   agentCount: 5
   groupName: 
+  count: 0
+  canSpawn: 1
 --- !u!65 &1761498254
 BoxCollider:
   m_ObjectHideFlags: 0
