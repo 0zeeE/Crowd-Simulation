@@ -1824,9 +1824,13 @@ MonoBehaviour:
   secondTarget: {fileID: 0}
   previousTarget: {fileID: 0}
   playerTransform: {fileID: 0}
+  playerTag: Player
   isInterrupted: 0
+  panicMode: 0
   targetTransforms: []
+  emergencyExitTransforms: []
   AiModule: {fileID: 842668300726736901}
+  targetReachDistance: 0.5
 --- !u!114 &3476774979331441404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1877,7 +1881,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
