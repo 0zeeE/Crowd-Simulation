@@ -2096,6 +2096,7 @@ GameObject:
   - component: {fileID: 1745797395576947024}
   - component: {fileID: 8126420770399681193}
   - component: {fileID: 8068044988970557975}
+  - component: {fileID: -3459220599371520106}
   m_Layer: 0
   m_Name: Henry
   m_TagString: Untagged
@@ -2440,6 +2441,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+--- !u!114 &-3459220599371520106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616627108775930281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8901880642119193847
 GameObject:
   m_ObjectHideFlags: 0

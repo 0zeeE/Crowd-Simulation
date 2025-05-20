@@ -1445,6 +1445,7 @@ GameObject:
   - component: {fileID: 7041545456971311657}
   - component: {fileID: 8792874877642449202}
   - component: {fileID: 1974261993482634971}
+  - component: {fileID: 1977226277795147695}
   m_Layer: 0
   m_Name: Maria
   m_TagString: Untagged
@@ -1775,6 +1776,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+--- !u!114 &1977226277795147695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256133571392836114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5402830682049771832
 GameObject:
   m_ObjectHideFlags: 0

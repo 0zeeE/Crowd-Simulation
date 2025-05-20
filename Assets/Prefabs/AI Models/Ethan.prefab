@@ -1550,6 +1550,7 @@ GameObject:
   - component: {fileID: 2331777036195414161}
   - component: {fileID: 3906334425118752613}
   - component: {fileID: 6251348559628246780}
+  - component: {fileID: 9196895463080180759}
   m_Layer: 0
   m_Name: Ethan
   m_TagString: Untagged
@@ -1895,6 +1896,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+--- !u!114 &9196895463080180759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5920245153295234345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5922419127375087759
 GameObject:
   m_ObjectHideFlags: 0

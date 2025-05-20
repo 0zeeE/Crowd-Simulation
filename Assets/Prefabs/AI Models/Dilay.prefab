@@ -1367,6 +1367,7 @@ GameObject:
   - component: {fileID: 782571707922465360}
   - component: {fileID: 8992947128231208751}
   - component: {fileID: 6632056595016341387}
+  - component: {fileID: 40976999093932871}
   m_Layer: 0
   m_Name: Dilay
   m_TagString: Untagged
@@ -1711,6 +1712,18 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &40976999093932871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220351477016754695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5355980281514493384
 GameObject:
   m_ObjectHideFlags: 0

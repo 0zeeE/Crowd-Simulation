@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 9139735284485007720}
   - component: {fileID: 2127516933767109323}
   - component: {fileID: 8623731115383977599}
+  - component: {fileID: -8202641686883180876}
   m_Layer: 0
   m_Name: William
   m_TagString: Untagged
@@ -424,6 +425,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+--- !u!114 &-8202641686883180876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413784971961637161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &499124294805054398
 GameObject:
   m_ObjectHideFlags: 0

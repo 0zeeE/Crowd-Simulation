@@ -1771,6 +1771,7 @@ GameObject:
   - component: {fileID: 8249463743578041145}
   - component: {fileID: 2132961004576482837}
   - component: {fileID: 547734874189506893}
+  - component: {fileID: 3586381302475500127}
   m_Layer: 0
   m_Name: Chloe
   m_TagString: Untagged
@@ -2115,6 +2116,18 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &3586381302475500127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6647073657188985016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6771759317311613348
 GameObject:
   m_ObjectHideFlags: 0

@@ -2051,6 +2051,7 @@ GameObject:
   - component: {fileID: 3157106525431096532}
   - component: {fileID: 8329981732352375012}
   - component: {fileID: 4648478947350554684}
+  - component: {fileID: -6032177220722558605}
   m_Layer: 0
   m_Name: George
   m_TagString: Untagged
@@ -2395,6 +2396,18 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 0
+--- !u!114 &-6032177220722558605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175176414006306908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192131777837737315
 GameObject:
   m_ObjectHideFlags: 0

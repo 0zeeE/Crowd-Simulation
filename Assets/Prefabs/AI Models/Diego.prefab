@@ -1606,6 +1606,7 @@ GameObject:
   - component: {fileID: 1658897665062833426}
   - component: {fileID: 3945732463137783786}
   - component: {fileID: 9009890307932353660}
+  - component: {fileID: -1484555705109884085}
   m_Layer: 0
   m_Name: Diego
   m_TagString: Untagged
@@ -1951,6 +1952,18 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &-1484555705109884085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5375312832453286395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e593b37b325b9349ba0d88fef2e1b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5407596095748019284
 GameObject:
   m_ObjectHideFlags: 0
