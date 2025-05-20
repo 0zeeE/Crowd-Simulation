@@ -20,6 +20,7 @@ public class RVOAgent : MonoBehaviour
     public Transform secondTarget;
     public Transform previousTarget;
     public Transform playerTransform;
+    public string playerTag = "Player";
     public bool isInterrupted = false;
     public List<Transform> targetTransforms;
 
@@ -100,6 +101,8 @@ public class RVOAgent : MonoBehaviour
 
     IEnumerator Start()
     {
+        if (GameObject.FindGameObjectWithTag(playerTag) != null) playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
+        else Debug.Log("Player Tag bulunamadi.");
         GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
 
         foreach (GameObject target in TargetGObj)
