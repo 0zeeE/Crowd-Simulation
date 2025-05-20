@@ -2514,6 +2514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  animator: {fileID: 0}
   targetTag: 
   secondTarget: {fileID: 0}
   previousTarget: {fileID: 0}
@@ -2860,6 +2861,10 @@ PrefabInstance:
       propertyPath: personality
       value: Your name is Helena and you are a businesswoman.
       objectReference: {fileID: 0}
+    - target: {fileID: 5922177907677686924, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
+      propertyPath: actions.Array.data[0].actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 70920858251331754}
     - target: {fileID: 7686840976616435168, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
       propertyPath: skinnedMeshRenderer
       value: 
