@@ -16,6 +16,7 @@ public class RVOAgent : MonoBehaviour
     int agentIndex = -1;
     int currentNodeInThePath = 0;
     bool isAbleToStart = false;
+    [SerializeField] private Animator animator;
     public string targetTag;
     public Transform secondTarget;
     public Transform previousTarget;
@@ -75,6 +76,10 @@ public class RVOAgent : MonoBehaviour
     [ContextMenu("Use Emergency Exit")]
     public void EmergencyExit()
     {
+        if(isInterrupted == true)
+        {
+            ContinuePath();
+        }
         panicMode = true;
         int targetIndex = UnityEngine.Random.Range(0, emergencyExitTransforms.Count - 1);
         target = emergencyExitTransforms[targetIndex];
@@ -93,6 +98,7 @@ public class RVOAgent : MonoBehaviour
     {
         if(panicMode == false)
         {
+            if (animator != null) animator.SetBool("isInterrupted", true);
             isInterrupted = true;
             target = this.gameObject.transform;
             currentNodeInThePath = 0;
@@ -114,6 +120,7 @@ public class RVOAgent : MonoBehaviour
     [ContextMenu("Continue Path")]
     public void ContinuePath()
     {
+        if (animator != null) animator.SetBool("isInterrupted", false);
         isInterrupted = false;
         target = previousTarget;
         previousTarget = target;
@@ -132,6 +139,8 @@ public class RVOAgent : MonoBehaviour
 
     IEnumerator Start()
     {
+        if(this.gameObject.GetComponent<Animator>() != null) animator = this.gameObject.GetComponent<Animator>();
+
         // Eðer hedef önceden atanmýþsa, tekrar atama
         if (target == null && !string.IsNullOrEmpty(targetTag))
         {
