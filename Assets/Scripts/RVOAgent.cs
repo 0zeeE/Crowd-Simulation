@@ -8,7 +8,7 @@ public class RVOAgent : MonoBehaviour
 {
 
     [SerializeField]
-    Transform target = null;
+    public Transform target = null;
 
     Seeker agentSeeker;
     private List<Vector3> pathNodes = null;
@@ -20,13 +20,13 @@ public class RVOAgent : MonoBehaviour
     public Transform secondTarget;
     public Transform previousTarget;
     public Transform playerTransform;
-    public string playerTag = "Player";
     public bool isInterrupted = false;
     public List<Transform> targetTransforms;
 
     [SerializeField] private GameObject AiModule;
 
-    
+    [SerializeField] private float targetReachDistance = 0.5f;
+
     //Deneme amacli sabit bir noktayi setliyor. Acil durum cikma noktalari icin bu kullanilabilir.
     [ContextMenu("Set Target")]
     public void SetTarget()
@@ -101,15 +101,22 @@ public class RVOAgent : MonoBehaviour
 
     IEnumerator Start()
     {
-        if (GameObject.FindGameObjectWithTag(playerTag) != null) playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
-        else Debug.Log("Player Tag bulunamadi.");
-        GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
-
-        foreach (GameObject target in TargetGObj)
+        // Eðer hedef önceden atanmýþsa, tekrar atama
+        if (target == null && !string.IsNullOrEmpty(targetTag))
         {
-            targetTransforms.Add(target.transform);
+            GameObject[] TargetGObj = GameObject.FindGameObjectsWithTag("Goals");
+            foreach (GameObject t in TargetGObj)
+            {
+                targetTransforms.Add(t.transform);
+            }
+
+            GameObject foundTarget = GameObject.FindGameObjectWithTag(targetTag);
+            if (foundTarget != null)
+            {
+                target = foundTarget.transform;
+            }
         }
-        target = GameObject.FindGameObjectWithTag(targetTag).transform;
+
         previousTarget = target;
         currentNodeInThePath = 0;
         simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
@@ -118,6 +125,7 @@ public class RVOAgent : MonoBehaviour
         agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
         isAbleToStart = true;
     }
+
     IEnumerator StartPaths()
     {
         agentSeeker = gameObject.GetComponent<Seeker>();
@@ -140,13 +148,22 @@ public class RVOAgent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (isAbleToStart && agentIndex != -1 &&!isInterrupted)
+        if (isAbleToStart && agentIndex != -1 && !isInterrupted)
         {
-           
             transform.position = toUnityVector(simulator.getAgentPosition(agentIndex));
+
+            // Hedefe ulaþýldý mý kontrol et
+            if (currentNodeInThePath >= pathNodes.Count && pathNodes.Count > 0)
+            {
+                Vector3 lastNode = pathNodes[pathNodes.Count - 1];
+                float distance = Vector3.Distance(transform.position, lastNode);
+                if (distance < targetReachDistance)
+                {
+                    DespawnAgent();
+                }
+            }
         }
-        if(isInterrupted && playerTransform != null)
+        if (isInterrupted && playerTransform != null)
         {
             this.gameObject.transform.LookAt(playerTransform);
         }
@@ -171,6 +188,27 @@ public class RVOAgent : MonoBehaviour
         }
 
         return toRVOVector(station);
+    }
+
+    public void UpdateAgentIndex(int newIndex)
+    {
+        agentIndex = newIndex;
+    }
+
+    void DespawnAgent()
+    {
+        // RVO simülasyonundan ajaný çýkar
+        if (simulator != null && agentIndex != -1)
+        {
+            simulator.RemoveAgent(agentIndex, gameObject);
+        }
+        else
+        {
+            Debug.LogWarning($"Ajan {gameObject.name} için simulator veya agentIndex geçersiz!");
+        }
+
+        // GameObject'i yok et
+        Destroy(gameObject);
     }
     Vector3 toUnityVector(RVO.Vector2 param)
     {

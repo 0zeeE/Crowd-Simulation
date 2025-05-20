@@ -19,6 +19,24 @@ TagManager:
   - Left Hand
   - Right Hand
   - Test
+  - Goal11ForAgent11
+  - Goal12ForAgent12
+  - Goal13ForAgent13
+  - Goal14ForAgent14
+  - Goal15ForAgent15
+  - Goal16ForAgent16
+  - Goal17ForAgent17
+  - Goal18ForAgent18
+  - Goal19ForAgent19
+  - Goal20ForAgent20
+  - Goal21ForAgent21
+  - Goal22ForAgent22
+  - Goal23ForAgent23
+  - Goal24ForAgent24
+  - Goal25ForAgent25
+  - Goal26ForAgent26
+  - Goal27ForAgent27
+  - Goal28ForAgent28
   layers:
   - Default
   - TransparentFX

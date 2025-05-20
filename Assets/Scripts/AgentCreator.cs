@@ -1,41 +1,75 @@
 using UnityEngine;
 using System.Collections;
-using Pathfinding;
 using System.Collections.Generic;
 
-public class AgentCreator : MonoBehaviour
+public class AgentSpawner : MonoBehaviour
 {
+    public List<GameObject> agentPrefabs;
+    public List<Transform> targetPositions;
+    public float spawnInterval = 1f;
+    public int agentCount = 5;
+    public string groupName = "";
+    public static Dictionary<string, bool> spawnLocks = new Dictionary<string, bool>();
 
-    [SerializeField]
-    GameObject _prefab;
-
-    [SerializeField]
-    int _amount;
-
-    [SerializeField]
-    Transform _targetPosition;
-
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-        StartCoroutine(GenerateAgent());
+        StartCoroutine(SpawnAgents());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    IEnumerator GenerateAgent()
+    IEnumerator SpawnAgents()
     {
         int count = 0;
-        while (count != _amount)
+
+        while (count < agentCount)
         {
-            GameObject agentGameObject = (GameObject)Instantiate(_prefab, transform.position, Quaternion.Euler(0, 270, 0));
-            agentGameObject.name = _prefab.name + "C" + count;
-            yield return new WaitForSeconds(1);
+            if (!string.IsNullOrEmpty(groupName))
+            {
+                if (!spawnLocks.ContainsKey(groupName)) spawnLocks[groupName] = false;
+
+                if (spawnLocks[groupName])
+                {
+                    yield return new WaitForSeconds(0.5f);
+                    continue;
+                }
+
+                spawnLocks[groupName] = true;
+            }
+
+            GameObject prefab = agentPrefabs[Random.Range(0, agentPrefabs.Count)];
+
+            // Rastgele hedef seç
+            Transform target = targetPositions[Random.Range(0, targetPositions.Count)];
+
+            GameObject agent = Instantiate(prefab, transform.position, Quaternion.identity);
+            agent.name = prefab.name + "_Spawned";
+
+            var rvo = agent.GetComponent<RVOAgent>();
+            if (rvo != null)
+            {
+                rvo.target = target;
+                rvo.previousTarget = target;
+            }
+
             count++;
+            yield return new WaitForSeconds(spawnInterval);
+        }
+
+        if (!string.IsNullOrEmpty(groupName))
+        {
+            spawnLocks[groupName] = false;
+        }
+    }
+
+
+    // Listeyi karýþtýrmak için yardýmcý fonksiyon
+    void ShuffleList<T>(List<T> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            T temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
         }
     }
 }
