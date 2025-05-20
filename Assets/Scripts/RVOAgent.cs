@@ -20,8 +20,11 @@ public class RVOAgent : MonoBehaviour
     public Transform secondTarget;
     public Transform previousTarget;
     public Transform playerTransform;
+    public string playerTag = "Player";
     public bool isInterrupted = false;
+    [SerializeField] private bool panicMode = false;
     public List<Transform> targetTransforms;
+    public List<Transform> emergencyExitTransforms;
 
     [SerializeField] private GameObject AiModule;
 
@@ -31,9 +34,32 @@ public class RVOAgent : MonoBehaviour
     [ContextMenu("Set Target")]
     public void SetTarget()
     {
-        if(secondTarget != null)
+        if(panicMode == false)
         {
-            target = secondTarget;
+            if (secondTarget != null)
+            {
+                target = secondTarget;
+                previousTarget = target;
+                currentNodeInThePath = 0;
+                simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+                pathNodes = new List<Vector3>();
+                StartCoroutine(StartPaths());
+                agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+                isAbleToStart = true;
+            }
+        }
+        
+        
+    }
+
+    //NPC'nin yeni bir hedefi rastgele secip gitmesini sagliyor
+    [ContextMenu("Use Random Target")]
+    public void RandomTarget()
+    {
+        if(panicMode == false)
+        {
+            int targetIndex = UnityEngine.Random.Range(0, targetTransforms.Count - 1);
+            target = targetTransforms[targetIndex];
             previousTarget = target;
             currentNodeInThePath = 0;
             simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
@@ -46,11 +72,12 @@ public class RVOAgent : MonoBehaviour
     }
 
     //NPC'nin yeni bir hedefi rastgele secip gitmesini sagliyor
-    [ContextMenu("Use Random Target")]
-    public void RandomTarget()
+    [ContextMenu("Use Emergency Exit")]
+    public void EmergencyExit()
     {
-        int targetIndex = UnityEngine.Random.Range(0, targetTransforms.Count - 1);
-        target = targetTransforms[targetIndex];
+        panicMode = true;
+        int targetIndex = UnityEngine.Random.Range(0, emergencyExitTransforms.Count - 1);
+        target = emergencyExitTransforms[targetIndex];
         previousTarget = target;
         currentNodeInThePath = 0;
         simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
@@ -59,23 +86,27 @@ public class RVOAgent : MonoBehaviour
         agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
         isAbleToStart = true;
     }
-    
+
     //NPC'nin RVO ve A* hareketlerini durdurur ve oyuncuya bakmasini saglar.
     [ContextMenu("Interrupt NPC")]
     public void InterrputNPC()
     {
-        isInterrupted = true;
-        target = this.gameObject.transform;
-        currentNodeInThePath = 0;
-        simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
-        pathNodes = new List<Vector3>();
-        StartCoroutine(StartPaths());
-        agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
-        if(AiModule != null)
+        if(panicMode == false)
         {
-            AiModule.SetActive(true);
+            isInterrupted = true;
+            target = this.gameObject.transform;
+            currentNodeInThePath = 0;
+            simulator = GameObject.FindGameObjectWithTag("RVOSim").GetComponent<RVO2Simulator>();
+            pathNodes = new List<Vector3>();
+            StartCoroutine(StartPaths());
+            agentIndex = simulator.addAgentToSim(transform.position, gameObject, pathNodes);
+            if (AiModule != null)
+            {
+                AiModule.SetActive(true);
+            }
+            isAbleToStart = true;
         }
-        isAbleToStart = true;
+        
 
     }
 
@@ -116,6 +147,15 @@ public class RVOAgent : MonoBehaviour
                 target = foundTarget.transform;
             }
         }
+
+        GameObject[] emergencyExitObj = GameObject.FindGameObjectsWithTag("Emergency Exits");
+        foreach (GameObject t in emergencyExitObj)
+        {
+            emergencyExitTransforms.Add(t.transform);
+        }
+
+        if (GameObject.FindGameObjectWithTag(playerTag) != null) playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
+        else Debug.Log("Player tag bulunamadi.");
 
         previousTarget = target;
         currentNodeInThePath = 0;

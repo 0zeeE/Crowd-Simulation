@@ -37,6 +37,7 @@ TagManager:
   - Goal26ForAgent26
   - Goal27ForAgent27
   - Goal28ForAgent28
+  - Emergency Exits
   layers:
   - Default
   - TransparentFX
