@@ -38,6 +38,9 @@ TagManager:
   - Goal27ForAgent27
   - Goal28ForAgent28
   - Emergency Exits
+  - agent
+  - agent creator
+  - delete link
   layers:
   - Default
   - TransparentFX

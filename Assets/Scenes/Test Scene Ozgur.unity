@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 78706966}
   m_Layer: 0
   m_Name: AgentCreator1
-  m_TagString: Untagged
+  m_TagString: agent creator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3899,7 +3899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2098902832245331875, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3711731017608842297, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: actions.Array.data[0].actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -7895,7 +7895,7 @@ GameObject:
   - component: {fileID: 1178701554}
   m_Layer: 0
   m_Name: AgentCreator3
-  m_TagString: Untagged
+  m_TagString: agent creator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9426,9 +9426,10 @@ GameObject:
   - component: {fileID: 1320353956}
   - component: {fileID: 1320353958}
   - component: {fileID: 1320353957}
+  - component: {fileID: 1320353959}
   m_Layer: 0
   m_Name: Node
-  m_TagString: Untagged
+  m_TagString: delete link
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9498,6 +9499,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320353955}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1320353959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320353955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca327ce4e754a4597a70fb963758f8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 8776795623193873265
+  end: {fileID: 1574460264}
+  costFactor: 1
+  oneWay: 0
+  deleteConnection: 0
 --- !u!1 &1331246119
 GameObject:
   m_ObjectHideFlags: 0
@@ -9709,7 +9728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAQIewDWOJtUAEAACgCAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlUctuwjAQ/BXkc0Ehjyb0WhDqoRTx+IC1vQkrEhvZDiUg/r12AJWqp12NxzOzuxdmtHbsbXBhC2jQN4y9DNimO/T9VpHrZqoihaONAWVLbZpAmG8/poEwyeMyjgoOWZSXfJwMMc85z2GS8hTTJJmwq2dbBCN2G6humg6qCmWQaeA0JetAiWCXeaSmhpwNgQbs5Evkse5ez6EOgqCBToANuUuoLXqktRhPl7vOkrBPsNuR2K/+sZ/hFUhqw5949FoEbRStsXQMiZxpsY9p97dIR6jb8DDM+hzKD4bWLbTExxyfvg9jvmulUDjSKgxatST/KrAkGecpnwiecpQI0TAtYpBZUWAmMo6FZL0F+RMQ1EtUULvHJvQB1W88db/cUpNycwOHXbCUBr7ndG60/WWSKvVaGET1dVN4LMSi8SZ0RjmT5LRZo3OkqvCVXa7s+gNQSwMEFAAACAgAABAh7GKPTaBuAAAAeQAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKxsaG5SZJlcpJJUmpKaqKBromFUWKKqYVFqmmyaVKqRYpSLFB9SWVBql9ibipET0BiSUZaZl5KZl66XkB+Zl6JO8hspdhaAFBLAQItABQAAAgIAAAQIewDWOJtUAEAACgCAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAQIexij02gbgAAAHkAAAAJACQAAAAAAAAAAAAAAJ0BAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAVgIAAAAA
+    dataString: UEsDBBQAAAgIAAAQIez+CsBHTgEAACcCAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlUctuwjAQ/BXkc0GQRxN6LQj1UIp4fMDa3iQrEhvZDiUg/r02DwHqaVfj2ZlZ74kZrR376J3YHBr0DWNvPbbudpd+o8h1U1WSwsHagLKFNk0gzDZfk0AYZ1ERDXMO6TAr+CjuY5ZxnsE44QkmcTxmZ8+2CEZUayivmg7KEmWQaeAwIetAiWCXeqSmhpwNgXrs4MvQY92tHkPtBUEDnQAbchdQW/RIazGaLKrOkrBPsKtIbJf/2M/wEiS1YSYavOdBG0VrLO1DImdavMS022ukPdRteOinlxzKL4bWzbXE+x7fvg9rfmqlUDjSKixatiRfFVgcj7KEjwVPOEqEYT/JI5BpnmMqUo65ZBcL8icgqBeooHb3n9A7VI946na5hSblZgZ2VbCUBn5ndGy0fTBJFXolDKL6eVGwaLwHHVFOJTltVugcqTJMstOZnf8AUEsDBBQAAAgIAAAQIexij02gbgAAAHkAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrSSsbGhuUmSZXKSSVJqSmqiga6JhVFiiqmFRappsmlSqkWKUixQfUllQapfYm4qRE9AYklGWmZeSmZeul5AfmZeiTvIbKXYWgBQSwECLQAUAAAICAAAECHs/grAR04BAAAnAgAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAAECHsYo9NoG4AAAB5AAAACQAkAAAAAAAAAAAAAACbAQAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAFQCAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -10935,7 +10954,7 @@ GameObject:
   - component: {fileID: 1545615053}
   m_Layer: 0
   m_Name: Node
-  m_TagString: Untagged
+  m_TagString: delete link
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11200,9 +11219,10 @@ GameObject:
   - component: {fileID: 1574460264}
   - component: {fileID: 1574460266}
   - component: {fileID: 1574460265}
+  - component: {fileID: 1574460267}
   m_Layer: 0
   m_Name: Node (5)
-  m_TagString: Untagged
+  m_TagString: delete link
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11272,6 +11292,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574460263}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1574460267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574460263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca327ce4e754a4597a70fb963758f8bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  uniqueID: 858055208275104273
+  end: {fileID: 2095883620}
+  costFactor: 1
+  oneWay: 0
+  deleteConnection: 0
 --- !u!1 &1594173456
 GameObject:
   m_ObjectHideFlags: 0
@@ -12063,6 +12101,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687982808}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1692606231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692606233}
+  - component: {fileID: 1692606232}
+  m_Layer: 0
+  m_Name: SimulationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1692606232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692606231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66fd585cf9b34df4ca2dfea4944b2785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RVO_agents: []
+  agentCreators: []
+  graphLinks: []
+  aStar: {fileID: 1343139184}
+  useNodeLinkDestruction: 0
+  isActivated: 0
+  agentTag: agent
+  agentCreatorTag: agent creator
+  linkToBeDeleted: delete link
+--- !u!4 &1692606233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692606231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8133436, y: 15.664076, z: -22.134619}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712435254
 GameObject:
   m_ObjectHideFlags: 0
@@ -12193,7 +12284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1719267120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12540,7 +12631,7 @@ GameObject:
   - component: {fileID: 1761498253}
   m_Layer: 0
   m_Name: AgentCreator2
-  m_TagString: Untagged
+  m_TagString: agent creator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17858,3 +17949,4 @@ SceneRoots:
   - {fileID: 330834061}
   - {fileID: 435086192}
   - {fileID: 538030723}
+  - {fileID: 1692606233}

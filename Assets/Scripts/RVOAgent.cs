@@ -72,7 +72,7 @@ public class RVOAgent : MonoBehaviour
         
     }
 
-    //NPC'nin yeni bir hedefi rastgele secip gitmesini sagliyor
+    //NPC'nin yeni bir acil cikis hedefini rastgele secip gitmesini sagliyor
     [ContextMenu("Use Emergency Exit")]
     public void EmergencyExit()
     {
@@ -81,6 +81,7 @@ public class RVOAgent : MonoBehaviour
             ContinuePath();
         }
         panicMode = true;
+        animator.SetBool("isPanicked", true);
         int targetIndex = UnityEngine.Random.Range(0, emergencyExitTransforms.Count - 1);
         target = emergencyExitTransforms[targetIndex];
         previousTarget = target;
