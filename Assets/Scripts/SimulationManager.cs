@@ -10,6 +10,7 @@ public class SimulationManager : MonoBehaviour
     public GameObject[] agentCreators;
     public GameObject[] graphLinks;
     public GameObject aStar;
+    public GameObject fireEffectParent;
     public bool useNodeLinkDestruction = false;
     [SerializeField] private bool isActivated = false;
     public string agentTag = "agent";
@@ -42,6 +43,8 @@ public class SimulationManager : MonoBehaviour
             }
             aStar.GetComponent<AstarPath>().Scan();
         }
+        yield return new WaitForSeconds(1);
+        fireEffectParent.SetActive(true);
         RVO_agents = GameObject.FindGameObjectsWithTag(agentTag);
         foreach(GameObject RVOagent in RVO_agents)
         {
