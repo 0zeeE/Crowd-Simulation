@@ -852,8 +852,8 @@
                 },
                 {
                     "name": "",
-                    "id": "b34c79c1-ab5e-4851-87ac-abc43705eae0",
-                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "id": "a5bf6a12-a026-46d1-a793-7252c49aaf66",
+                    "path": "<MetaAimHand>{LeftHand}/indexPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -863,11 +863,11 @@
                 },
                 {
                     "name": "",
-                    "id": "a5bf6a12-a026-46d1-a793-7252c49aaf66",
-                    "path": "<MetaAimHand>{LeftHand}/indexPressed",
+                    "id": "e2c57126-34fc-4eb2-85f5-d0d9bda32beb",
+                    "path": "<XRController>/menuButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Generic XR Controller",
+                    "groups": "",
                     "action": "UI Press",
                     "isComposite": false,
                     "isPartOfComposite": false
