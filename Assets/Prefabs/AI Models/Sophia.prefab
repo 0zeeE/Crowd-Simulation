@@ -141,6 +141,8 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
+  useGraphTags: 0
+  aStarGraphs: []
   AiModule: {fileID: 4813027813098446026}
   targetReachDistance: 0.5
 --- !u!114 &2086824945214803144
@@ -216,7 +218,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -2725,6 +2727,14 @@ PrefabInstance:
       propertyPath: actions.Array.data[0].actionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 8382650311533713838}
+    - target: {fileID: 7572485069392169321, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5431261740638395200}
+    - target: {fileID: 7572485069392169321, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinuePath
+      objectReference: {fileID: 0}
     - target: {fileID: 7686840976616435168, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
       propertyPath: skinnedMeshRenderer
       value: 

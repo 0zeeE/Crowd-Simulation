@@ -8,7 +8,8 @@ public class RVO2Simulator : MonoBehaviour
 
     List<RVO.Vector2> agentPositions;
     List<GameObject> rvoGameObj;
-    
+    public float radius = 15f;
+    public float neighbourDistance= 0.5f;
 
     // Use this for initialization
     void Start()
@@ -17,7 +18,7 @@ public class RVO2Simulator : MonoBehaviour
         rvoGameObj = new List<GameObject>();
 
         Simulator.Instance.setTimeStep(0.01f);
-        Simulator.Instance.setAgentDefaults(15.0f, 10, 5.0f, 5.0f, 0.5f, 2.0f, new RVO.Vector2(0.0f, 0.0f));
+        Simulator.Instance.setAgentDefaults(radius, 10, 5.0f, 5.0f, neighbourDistance, 2.0f, new RVO.Vector2(0.0f, 0.0f));
     }
 
     public Simulator getSimulator()
@@ -51,7 +52,7 @@ public class RVO2Simulator : MonoBehaviour
         Simulator.Instance.Clear();
         //re initialize the simulation
         Simulator.Instance.setTimeStep(0.10f);
-        Simulator.Instance.setAgentDefaults(15.0f, 10, 5.0f, 5.0f, 0.5f, 2.0f, new RVO.Vector2(0.0f, 0.0f));
+        Simulator.Instance.setAgentDefaults(radius, 10, 5.0f, 5.0f, neighbourDistance, 2.0f, new RVO.Vector2(0.0f, 0.0f));
 
         //add all the previous agents
         int agentCount = agentPositions.Count;
@@ -87,7 +88,7 @@ public class RVO2Simulator : MonoBehaviour
 
         // Simülasyon ayarlarýný yeniden yapýlandýr
         Simulator.Instance.setTimeStep(0.10f);
-        Simulator.Instance.setAgentDefaults(15.0f, 10, 5.0f, 5.0f, 0.5f, 2.0f, new RVO.Vector2(0.0f, 0.0f));
+        Simulator.Instance.setAgentDefaults(radius, 10, 5.0f, 5.0f, neighbourDistance, 2.0f, new RVO.Vector2(0.0f, 0.0f));
 
         // Kalan ajanlarý yeniden ekle
         for (int i = 0; i < agentPositions.Count; i++)

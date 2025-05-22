@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b74db57693f4347b4efd541de72daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFPS: 300
+  maxFPS: 60
   panicModeFps: 30
 --- !u!4 &188202662
 Transform:
@@ -14064,6 +14064,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1117f69086bb0844fa8c5b2fa7a84cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 35
+  neighbourDistance: 2
 --- !u!1 &1966294448
 GameObject:
   m_ObjectHideFlags: 0

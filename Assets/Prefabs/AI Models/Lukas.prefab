@@ -2513,7 +2513,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -2730,6 +2730,14 @@ PrefabInstance:
     - target: {fileID: 6207540964788365845, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
       propertyPath: presetVoiceID
       value: CHARLIE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572485069392169321, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 310488233554395945}
+    - target: {fileID: 7572485069392169321, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinuePath
       objectReference: {fileID: 0}
     - target: {fileID: 7686840976616435168, guid: 23fc65209c4d96843ba3b1f7ca742195, type: 3}
       propertyPath: skinnedMeshRenderer
