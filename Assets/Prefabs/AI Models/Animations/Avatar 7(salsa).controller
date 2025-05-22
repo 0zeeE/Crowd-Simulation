@@ -112,7 +112,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Avatar 1
+  m_Name: Avatar 7(salsa)
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Walk
@@ -168,7 +168,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
-  m_ExitTime: 3
+  m_ExitTime: 1
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -288,7 +288,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Dance
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 26895535608367888}
   m_StateMachineBehaviours: []
@@ -300,10 +300,10 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 3fc0907be1740f84b903d8d5e69c421b, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 18cc2f5cdcf3b6a4bb60f71f2d84a008, type: 3}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: 
+  m_MirrorParameter: Walk
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &9137912686820240466

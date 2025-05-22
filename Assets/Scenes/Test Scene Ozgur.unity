@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b74db57693f4347b4efd541de72daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFPS: 60
+  maxFPS: 300
   panicModeFps: 30
 --- !u!4 &188202662
 Transform:
@@ -3928,7 +3928,7 @@ PrefabInstance:
       objectReference: {fileID: 1715618627}
     - target: {fileID: 4930969687209539378, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: graphMask.value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5380588227971962844, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: m_UseGravity

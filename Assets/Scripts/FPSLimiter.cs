@@ -11,6 +11,7 @@ public class FPSLimiter : MonoBehaviour
         QualitySettings.vSyncCount = 0;    // V-Sync kapatýlmalý, yoksa targetFrameRate etkisiz olur
     }
 
+    [ContextMenu("Update fps")]
     public void UpdateFPS()
     {
         Application.targetFrameRate = maxFPS+panicModeFps;  // Burada guncellenen FPS'e cekilecek.
