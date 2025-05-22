@@ -984,7 +984,7 @@ Animator:
   m_GameObject: {fileID: 3326142401019156455}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 135b456f38897dd40a0dcf22218087bb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 022ac0981b77628458c1f2b2a63d820a, type: 2}
+  m_Controller: {fileID: 9100000, guid: f66a2eed8e2b17f4eb3c1bc0107bcd66, type: 2}
   m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1263,6 +1263,8 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
+  useGraphTags: 0
+  aStarGraphs: []
   AiModule: {fileID: 0}
   targetReachDistance: 0.5
 --- !u!114 &5224478089004639665

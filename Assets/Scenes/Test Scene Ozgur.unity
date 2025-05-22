@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b74db57693f4347b4efd541de72daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFPS: 60
+  maxFPS: 300
   panicModeFps: 30
 --- !u!4 &188202662
 Transform:
@@ -3919,12 +3919,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 753798979}
     - target: {fileID: 4619854496201328328, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
+      propertyPath: useGraphTags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619854496201328328, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1715618627}
     - target: {fileID: 4930969687209539378, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: graphMask.value
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5380588227971962844, guid: c0489ea627eaa8a4982b41b25ac00206, type: 3}
       propertyPath: m_UseGravity
@@ -7417,7 +7421,7 @@ GameObject:
   - component: {fileID: 1045922614}
   m_Layer: 6
   m_Name: Nodes
-  m_TagString: Untagged
+  m_TagString: Graphs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8778,6 +8782,8 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
+  useGraphTags: 0
+  aStarGraphs: []
   AiModule: {fileID: 8353273127620746202}
   targetReachDistance: 0.5
 --- !u!114 &1227492503
@@ -12489,6 +12495,8 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
+  useGraphTags: 0
+  aStarGraphs: []
   AiModule: {fileID: 0}
   targetReachDistance: 0.5
 --- !u!136 &1719267122
@@ -13547,7 +13555,7 @@ GameObject:
   - component: {fileID: 1910413026}
   m_Layer: 0
   m_Name: NodesNew
-  m_TagString: Untagged
+  m_TagString: Graphs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15979,6 +15987,8 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
+  useGraphTags: 0
+  aStarGraphs: []
   AiModule: {fileID: 0}
   targetReachDistance: 0.5
 --- !u!4 &2569837611403746387

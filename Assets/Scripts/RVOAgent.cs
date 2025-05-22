@@ -26,6 +26,8 @@ public class RVOAgent : MonoBehaviour
     [SerializeField] private bool panicMode = false;
     public List<Transform> targetTransforms;
     public List<Transform> emergencyExitTransforms;
+    public bool useGraphTags;
+    [SerializeField] private GameObject[] aStarGraphs;
 
     [SerializeField] private GameObject AiModule;
 
@@ -179,6 +181,11 @@ public class RVOAgent : MonoBehaviour
     IEnumerator StartPaths()
     {
         agentSeeker = gameObject.GetComponent<Seeker>();
+        if(useGraphTags)
+        {
+            aStarGraphs = GameObject.FindGameObjectsWithTag("Graphs");
+            agentSeeker.graphMask = UnityEngine.Random.Range(1, aStarGraphs.Length + 1);
+        }
         var path = agentSeeker.StartPath(transform.position, target.position, OnPathComplete);
         yield return StartCoroutine(path.WaitForPath());
     }
