@@ -41,6 +41,7 @@ TagManager:
   - agent
   - agent creator
   - delete link
+  - Graphs
   layers:
   - Default
   - TransparentFX
