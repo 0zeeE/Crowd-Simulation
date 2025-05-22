@@ -53,4 +53,27 @@ public class SimulationManager : MonoBehaviour
         }
         yield return new WaitForSeconds(1);
     }
+
+    IEnumerator BeforeSceneChange()
+    {
+        agentCreators = GameObject.FindGameObjectsWithTag(agentCreatorTag);
+        foreach (GameObject creator in agentCreators)
+        {
+            creator.GetComponent<AgentSpawner>().SetSpawnBool(false);
+        }
+        yield return new WaitForSeconds(1);
+    }
+
+
+    public void RestartScene()
+    {
+        StartCoroutine(BeforeSceneChange());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenuScene()
+    {
+        StartCoroutine(BeforeSceneChange());
+        SceneManager.LoadScene(0); //0. index ana menu olacak.
+    }
 }
