@@ -96,13 +96,13 @@ public class RVO2Simulator : MonoBehaviour
             Simulator.Instance.addAgent(agentPositions[i]);
         }
 
-        // RVOAgent'larýn agentIndex'lerini güncelle
+        // RVOAgent' larýn agentIndex'lerini güncelle
         for (int i = 0; i < rvoGameObj.Count; i++)
         {
             var rvoAgent = rvoGameObj[i].GetComponent<RVOAgent>();
             if (rvoAgent != null)
             {
-                rvoAgent.UpdateAgentIndex(i); // Yeni bir metod ekleyeceðiz
+                rvoAgent.UpdateAgentIndex(i); 
             }
         }
     }
