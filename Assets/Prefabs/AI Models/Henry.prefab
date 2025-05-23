@@ -2220,7 +2220,7 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
-  useGraphTags: 0
+  useGraphTags: 1
   aStarGraphs: []
   AiModule: {fileID: 6379187175366965203}
   targetReachDistance: 0.5

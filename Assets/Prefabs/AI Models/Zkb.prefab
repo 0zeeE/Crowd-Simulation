@@ -946,7 +946,7 @@ MonoBehaviour:
   panicMode: 0
   targetTransforms: []
   emergencyExitTransforms: []
-  useGraphTags: 0
+  useGraphTags: 1
   aStarGraphs: []
   AiModule: {fileID: 6523658819498399916}
   targetReachDistance: 0.5
