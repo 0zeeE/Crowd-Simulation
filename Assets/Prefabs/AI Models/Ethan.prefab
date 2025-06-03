@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 3906334425118752613}
   - component: {fileID: 6251348559628246780}
   - component: {fileID: 9196895463080180759}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Ethan
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1642,7 +1642,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

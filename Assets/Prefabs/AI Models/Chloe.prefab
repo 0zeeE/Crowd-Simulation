@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 2132961004576482837}
   - component: {fileID: 547734874189506893}
   - component: {fileID: 3586381302475500127}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Chloe
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1862,7 +1862,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

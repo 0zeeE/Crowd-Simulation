@@ -1446,7 +1446,7 @@ GameObject:
   - component: {fileID: 8792874877642449202}
   - component: {fileID: 1974261993482634971}
   - component: {fileID: 1977226277795147695}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Maria
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1522,7 +1522,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

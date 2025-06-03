@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 3571744786923439436}
   - component: {fileID: 685349597755549989}
   - component: {fileID: -8621814787447417163}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Grace
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1263,7 +1263,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

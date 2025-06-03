@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 8992947128231208751}
   - component: {fileID: 6632056595016341387}
   - component: {fileID: 40976999093932871}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Dilay
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1458,7 +1458,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

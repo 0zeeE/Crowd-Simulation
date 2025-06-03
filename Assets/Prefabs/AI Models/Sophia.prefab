@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 237337121577806704}
   - component: {fileID: 4867135022715938632}
   - component: {fileID: -4061486995855837511}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Sophia
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

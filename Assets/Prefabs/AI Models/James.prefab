@@ -1583,7 +1583,7 @@ GameObject:
   - component: {fileID: 6509040412008208372}
   - component: {fileID: 1578990880565809055}
   - component: {fileID: -8694022899095971155}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: James
   m_TagString: agent
   m_Icon: {fileID: 0}
@@ -1673,7 +1673,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
